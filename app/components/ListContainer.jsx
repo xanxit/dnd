@@ -21,7 +21,7 @@ const ListContainer = ({ lists, sort }) => {
   };
   return (
     <DragDropContext onDragEnd={onDragEndFunc}>
-      <div className="px-6 flex gap-x-2">
+      <div className="px-6 flex gap-x-2 overflow-x-scroll">
         {lists.map((list, idx) => (
           <ListBase {...list} key={idx} />
         ))}

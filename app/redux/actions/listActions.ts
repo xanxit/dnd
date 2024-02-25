@@ -1,11 +1,11 @@
-import { CONSTANTS } from "../actions";
+import { CONSTANTS } from ".";
 
 export const sort = (
-  droppableIdStart,
-  droppableIdEnd,
-  droppableIndexStart,
-  droppableIndexEnd,
-  draggableId
+  droppableIdStart: string,
+  droppableIdEnd: string,
+  droppableIndexStart: number,
+  droppableIndexEnd: number,
+  draggableId: string
 ) => {
   return {
     type: CONSTANTS.DRAG_HAPPENED,

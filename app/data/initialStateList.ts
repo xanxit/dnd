@@ -1,4 +1,4 @@
-const initalState = [
+export const initalState = [
   {
     title: 'REJECTED',
     id: 'list-1',
@@ -94,5 +94,3 @@ const initalState = [
     textColor: '#219653'
   }
 ]
-
-export default initalState

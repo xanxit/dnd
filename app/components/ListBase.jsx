@@ -7,29 +7,29 @@ const ListBase = (props) => {
     <Droppable droppableId={String(props?.id)}>
       {(provided) => (
         <div
-          className={`lg:w-[308px] 2xl:w-full bg-gray-50 rounded-lg min-h-screen mb-20 border overflow-hidden`}
+          className={`w-[308px] 2xl:w-full bg-gray-50 rounded-lg min-h-screen mb-20 border`}
           {...provided.droppableProps}
           ref={provided.innerRef}
           style={{ borderColor: `${props?.headerColor}` }}
         >
-          <div
-            className={`h-8 w-full border-b flex items-center gap-x-1 px-2.5`}
-            style={{ background: ` ${props?.headerColor}` }}
-          >
-            <img
-              src={`/images/list-icons/${props?.title?.toLowerCase()}.svg`}
-              height={14}
-              width={14}
-              alt="status"
-            />
-            <p
-              className={`text-xs font-semibold`}
-              style={{ color: `${props?.textColor}` }}
+            <div
+              className={`w-full flex items-center gap-x-1 px-2.5 h-8 rounded-t`}
+              style={{ background: ` ${props?.headerColor}` }}
             >
-              {props?.title} &nbsp;•&nbsp; {props?.applicants?.length}
-            </p>
-          </div>
-          <div className="p-2">
+              <img
+                src={`/images/list-icons/${props?.title?.toLowerCase()}.svg`}
+                height={14}
+                width={14}
+                alt="status"
+              />
+              <p
+                className={`text-xs font-semibold`}
+                style={{ color: `${props?.textColor}` }}
+              >
+                {props?.title} &nbsp;•&nbsp; {props?.applicants?.length}
+              </p>
+            </div>
+          <div className="p-2 w-full">
             {props?.applicants?.map((applicant, idx) => (
               <CardBase
                 applicantData={applicant}
