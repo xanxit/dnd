@@ -80,13 +80,13 @@ const JDHeader = () => {
             <Image
               className="w-4 h-4 rounded-full bg-center bg-no-repeat bg-cover flex justify-center items-center object-cover hover:opacity-90 transition-opacity border-1 border-white bg-white -mt-0.5"
               src="/images/akash-img.svg"
-              alt="Sanchit Hajela"
+              alt="Akash Bhadange"
               width="18"
               height="18"
             />
           </span>
           &nbsp;
-          <span className="font-semibold text-[#0D0D0D]">Sanchit Hajela</span>
+          <span className="font-semibold text-[#0D0D0D]">Akash Bhadange</span>
         </div>
       </div>
     </div>
