@@ -458,11 +458,11 @@ const SideBar = () => {
                     </div>
                   </div>
                 </span>
-                <span className="flex flex-col lg:ml-2 mt-2 lg:mt-0 transition-all lg:group-hover:translate-x-1">
+                <a href="https://peerlist.io/xanxit" className="flex flex-col lg:ml-2 mt-2 lg:mt-0 transition-all lg:group-hover:translate-x-1">
                   <span className="paragraph-clamp1 lg:text-base text-xxs font-normal">
                     Sanchit
                   </span>
-                </span>
+                </a>
               </a>
             </div>
             <button
