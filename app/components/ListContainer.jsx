@@ -1,15 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import ListBase from "./ListBase";
 import { DragDropContext } from "react-beautiful-dnd";
 import { sort } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ListContainer = ({ lists, sort, searchKeyWord }) => {
-  const dispatch = useDispatch();
-
+  const notify = () => toast("Please Don't Reject Sanchit ❤️");
+  const name = "Sanchit Hajela";
   const filteredLists = lists.map((list) => ({
     ...list,
     applicants: list.applicants.filter((applicant) =>
@@ -18,6 +19,14 @@ const ListContainer = ({ lists, sort, searchKeyWord }) => {
       )
     ),
   }));
+  useEffect(() => {
+    const isSanchit = filteredLists[0].applicants.filter(
+      (applicant) => applicant.name.toLowerCase() === name.toLowerCase()
+    );
+    if (isSanchit.length) {
+      notify();
+    }
+  }, [filteredLists]);
 
   const onDragEndFunc = (result) => {
     const { destination, source, draggableId } = result;
@@ -33,6 +42,7 @@ const ListContainer = ({ lists, sort, searchKeyWord }) => {
 
   return (
     <DragDropContext onDragEnd={onDragEndFunc}>
+      <ToastContainer />
       <div className="px-6 flex gap-x-2 overflow-x-scroll">
         {filteredLists.map((list, idx) => (
           <ListBase {...list} key={idx} />

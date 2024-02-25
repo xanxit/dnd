@@ -9,7 +9,6 @@ import ListContainer from "./components/ListContainer";
 export default function Home() {
   const [searchKeyWord, setSearchKeyWord] = useState("");
   useEffect(() => {
-    console.log(searchKeyWord);
   }, [searchKeyWord]);
   return (
     <section className="page-container w-full min-h-screen mx-auto">
