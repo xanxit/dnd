@@ -35,7 +35,7 @@ export const initalState = [
     applicants: [
       {
         id: "applied-1",
-        name: "Sohan Rhoades",
+        name: "Sohan Singh",
         designation: "Software Enginer at JIH Adv.",
         exp: "1y 9m",
         offer: "No",
@@ -55,6 +55,7 @@ export const initalState = [
         email: "animesh123@xyz.com",
         img: "https://i.pravatar.cc/340",
         num: "+91238299329",
+        external: true
       },
       {
         id: "applied-3",
@@ -96,6 +97,7 @@ export const initalState = [
         email: "sanchit10hajela@gmail.com",
         img: "/images/sanchit-boi.webp",
         num: "9935955586",
+        peerlist: true
       },
     ],
     headerColor: "#E2F5EA",
