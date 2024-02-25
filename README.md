@@ -15,6 +15,9 @@ This [Drag and drop board](https://dnd-theta.vercel.app/) has been made using [N
 - ### Search 
   It allows you to search within these drag and drop lists, it updates on realtime when you search.
 
+- ### State Management
+  I have used Redux for the ease of state management and manipulation for the drag and drop
+
 - ### State Persistence
   I have used redux-persist to persist the state of the board so that even refresh does not hamper the state of your lists!!!
 
@@ -31,3 +34,14 @@ This [Drag and drop board](https://dnd-theta.vercel.app/) has been made using [N
 ### Have a look at the ratings report [here](https://pagespeed.web.dev/analysis/https-dnd-theta-vercel-app/8oclfhiqzo?form_factor=desktop)
 
 ![rating report](https://github.com/xanxit/dnd/blob/master/public/rating.png)
+
+
+### Assumptions and Default App Behaviour
+
+- I have used Inter font family from google fonts.
+
+- The lists are not draggable, as I feel it's a cool Tinder like UI right now,
+  - Right Swipe Shortlisted
+  - Left Swipe Rejected
+
+- I have created a ts file initialState.js with a certain set of random applicant's detail, it could be easily replaced via an API call, as Redux is managing the whole state management of the board.
