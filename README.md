@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Peerlist Profile Kanban Board 💚
 
-## Getting Started
+This [Drag and drop board](https://dnd-theta.vercel.app/) has been made using [NextJS](https://nextjs.org/), React Beautiful DND, [Tailwind CSS](https://tailwindcss.com/), [React-table](https://react-table.tanstack.com/) and [React Toastify](https://github.com/fkhadra/react-toastify#readme). 
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ### Drag and Drop applicants
+  The major purpose of the drag and drop board is to drag applicants to different stages of their job application. Three statuses that I mentioned are<br/>
+  - REJECTED
+  - APPLIED
+  - SHORTLISTED
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- ### Search 
+  It allows you to search within these drag and drop lists, it updates on realtime when you search.
 
-## Learn More
+- ### State Persistence
+  I have used redux-persist to persist the state of the board so that even refresh does not hamper the state of your lists!!!
 
-To learn more about Next.js, take a look at the following resources:
+- ## You can Reject Me
+  I would ask you to reject me on the board, there is a sweet and simple message for you, I hope you enjoy the Pun 💚
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Performance Metrics and Enhancements
+- The Total Blocking Time of the app is 10ms (which is quite good :)
+- The First Contentful Paint of the app is 0.5s
+- Overall performance of the app is 100(Desktop) and 94(Mobile) with 100 SEO rating.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Have a look at the ratings report [here](https://pagespeed.web.dev/analysis/https-dnd-theta-vercel-app/8oclfhiqzo?form_factor=desktop)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![rating report](https://github.com/xanxit/dnd/blob/master/public/rating.png)
