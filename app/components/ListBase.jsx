@@ -8,7 +8,7 @@ const ListBase = (props) => {
     <Droppable droppableId={String(props?.id)}>
       {(provided) => (
         <div
-          className={`w-[308px] 2xl:w-full bg-gray-50 rounded-lg min-h-screen mb-20 border`}
+          className={`w-[308px] 2xl:w-full bg-gray-50 rounded-lg min-h-max mb-20 border`}
           {...provided.droppableProps}
           ref={provided.innerRef}
           style={{ borderColor: `${props?.headerColor}` }}
