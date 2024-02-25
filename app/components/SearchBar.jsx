@@ -1,4 +1,8 @@
-const SearchBar = () => {
+const SearchBar = ({setSearchKeyWord}) => {
+  const getSearchKeyword = (e) =>{
+    e.preventDefault();
+    setSearchKeyWord(e.target.value)
+  }
   return (
     <div className="p-6 w-full flex items-center">
       <svg
@@ -20,6 +24,7 @@ const SearchBar = () => {
       <input
         className="pl-8 py-2 placeholder:text-sm text-sm outline-gray-200"
         placeholder="Search Candidates"
+        onChange={getSearchKeyword}
       ></input>
     </div>
   );

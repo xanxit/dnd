@@ -198,13 +198,10 @@ const SideBar = () => {
       <div className="w-[212px] border-r border-primaryBorder flex-col flex-shrink-0 fixed h-screen pb-2 lg:flex justify-between hidden">
         <div className="relative my-3">
           <a href="#">
-            <img
+            <Image
               alt="Peerlist"
-              loading="lazy"
               width="124"
               height="32"
-              decoding="async"
-              data-nimg="1"
               className="h-8"
               src="/images/peerlist-logo.svg"
             />
@@ -296,20 +293,25 @@ const SideBar = () => {
             >
               <span className="relative text-white group-hover:text-[#E1E4E8]">
                 <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  viewBox="0 0 26 26"
+                  fill="none"
                 >
                   <path
-                    d="M8.4 10.2H15.6M8.4 13.8H12M12 21C16.9707 21 21 16.9707 21 12C21 7.0293 16.9707 3 12 3C7.0293 3 3 7.0293 3 12C3 13.6389 3.4383 15.177 4.2042 16.5L3.45 20.55L7.5 19.7958C8.86758 20.5869 10.4201 21.0024 12 21V21Z"
-                    fill="currentColor"
-                    stroke="#212121"
+                    d="M8 12H16M8 16H12M12 24C17.523 24 22 19.523 22 14C22 8.477 17.523 4 12 4C6.477 4 2 8.477 2 14C2 15.821 2.487 17.53 3.338 19L2.5 23.5L7 22.662C8.51954 23.541 10.2445 24.0026 12 24V24Z"
+                    stroke="#0D0D0D"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                  ></path>
+                  />
+                  <path
+                    d="M20 11C22.7614 11 25 8.76142 25 6C25 3.23858 22.7614 1 20 1C17.2386 1 15 3.23858 15 6C15 8.76142 17.2386 11 20 11Z"
+                    fill="#00AA45"
+                    stroke="white"
+                    strokeWidth="2"
+                  />
                 </svg>
               </span>
               <span className="flex flex-col lg:ml-2 mt-2 lg:mt-0 transition-all lg:group-hover:translate-x-1">
@@ -446,7 +448,7 @@ const SideBar = () => {
                 <span className="relative text-white group-hover:text-[#E1E4E8]">
                   <div className="w-6 h-6 relative">
                     <div className="w-6 h-6 rounded-full overflow-hidden">
-                      <img
+                      <Image
                         className="w-6 h-6 rounded-full bg-center bg-no-repeat bg-cover flex justify-center items-center object-cover hover:opacity-90 transition-opacity border-1 border-white bg-white"
                         src="/images/sanchit-boi.webp"
                         alt="Sanchit Hajela"
@@ -468,7 +470,7 @@ const SideBar = () => {
               className="flex mt-2 items-center gap-2 cursor-pointer group"
             >
               <div className="flex mt-2 items-center gap-2 cursor-pointer group">
-                <img
+                <Image
                   src="/images/icons/loom-logo.svg"
                   width="24"
                   height="24"

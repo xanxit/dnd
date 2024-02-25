@@ -1,5 +1,6 @@
 "use client";
 import { Draggable } from "react-beautiful-dnd";
+import Image from "next/image";
 
 const CardBase = ({ applicantData, category, index, id }) => {
   const rejected = category.toLowerCase() === "rejected" ? true : false;
@@ -17,22 +18,41 @@ const CardBase = ({ applicantData, category, index, id }) => {
           <div className="flex flex-row justify-between items-start">
             <div className="w-8 h-8 relative">
               <div className="w-8 h-8 rounded-full overflow-hidden">
-                <img
+                <Image
                   className="w-8 h-8 rounded-full bg-center bg-no-repeat bg-cover flex justify-center items-center object-cover hover:opacity-90 transition-opacity border-1 border-white bg-white"
-                  src="/images/sanchit-boi.webp"
+                  src={applicantData.img || "/images/sanchit-boi.webp"}
                   alt="Sanchit Hajela"
                   width="32"
                   height="32"
                 />
               </div>
             </div>
-            <p className="text-[10px] text-[#6A737D]"> Applied 1d ago</p>
+            {applicantData.refferedBy ? (
+              <p className="flex text-[10px] text-[#6A737D]">
+                Ref by&nbsp;
+                <span className="w-4 h-4 inline-block rounded-full overflow-hidden">
+                  <Image
+                    className="w-4 h-4 rounded-full bg-center bg-no-repeat bg-cover flex justify-center items-center object-cover hover:opacity-90 transition-opacity border-1 border-white bg-white -mt-0.5"
+                    src="https://i.pravatar.cc/700"
+                    alt="Sanchit Hajela"
+                    width="16"
+                    height="16"
+                  />
+                </span>
+                &nbsp;
+                <span className="font-semibold text-[#0D0D0D]">
+                {applicantData.refferedBy}
+                </span>
+              </p>
+            ) : (
+              <p className="text-[10px] text-[#6A737D]"> Applied 1d ago</p>
+            )}
           </div>
           <div className="flex flex-col gap-y-0.5">
             <p className="font-semibold text-sm flex items-center">
               {applicantData.name + " "}
               <span className="ml-0.5 -mt-0.25">
-                <img
+                <Image
                   src="/images/icons/verified.svg"
                   alt="verified"
                   height="16"
@@ -48,9 +68,9 @@ const CardBase = ({ applicantData, category, index, id }) => {
               <span className="w-[6px] h-[6px] opacity-70 mr-1">&#10060;</span>
               &nbsp; Rejected by{" "}
               <span className="w-4 h-4 inline-block rounded-full overflow-hidden ml-1">
-                <img
+                <Image
                   className="w-4 h-4 rounded-full bg-center bg-no-repeat bg-cover flex justify-center items-center object-cover hover:opacity-90 transition-opacity border-1 border-white bg-white -mt-0.5"
-                  src="/images/sanchit-boi.webp"
+                  src="https://i.pravatar.cc/230"
                   alt="Yogini Bende"
                   width="16"
                   height="16"

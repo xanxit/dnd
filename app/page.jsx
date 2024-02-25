@@ -1,19 +1,24 @@
-import Image from "next/image";
-import SideBar from "./components/Sidebar"
-import JDHeader from "./components/JDHeader"
-import CardBase from "./components/CardBase"
-import SearchBar from "./components/SearchBar"
-import ListContainer from "./components/ListContainer"
+"use client";
+import { useState, useEffect } from "react";
+
+import SideBar from "./components/Sidebar";
+import JDHeader from "./components/JDHeader";
+import SearchBar from "./components/SearchBar";
+import ListContainer from "./components/ListContainer";
 
 export default function Home() {
+  const [searchKeyWord, setSearchKeyWord] = useState("");
+  useEffect(() => {
+    console.log(searchKeyWord);
+  }, [searchKeyWord]);
   return (
     <section className="page-container w-full min-h-screen mx-auto">
-      <SideBar/>
+      <SideBar />
       <div className="w-full lg:pl-[212px] border-r min-h-screen">
-        <JDHeader/>
+        <JDHeader />
         {/* <CardBase/> */}
-        <SearchBar/>
-        <ListContainer/>
+        <SearchBar setSearchKeyWord={setSearchKeyWord} />
+        <ListContainer searchKeyWord={searchKeyWord} />
       </div>
     </section>
   );

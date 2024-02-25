@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import CardBase from "./CardBase";
 import { Droppable } from "react-beautiful-dnd";
 
@@ -16,7 +17,7 @@ const ListBase = (props) => {
               className={`w-full flex items-center gap-x-1 px-2.5 h-8 rounded-t`}
               style={{ background: ` ${props?.headerColor}` }}
             >
-              <img
+              <Image
                 src={`/images/list-icons/${props?.title?.toLowerCase()}.svg`}
                 height={14}
                 width={14}
