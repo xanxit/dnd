@@ -3,39 +3,37 @@ import { CONSTANTS } from "../actions";
 
 const listsReducer = (state = initalState, action) => {
   switch (action.type) {
-    case CONSTANTS.DRAG_HAPPENED:
+    case CONSTANTS.DRAG_HAPPENED: {
       const {
-        droppableIdStart,
-        droppableIdEnd,
-        droppableIndexStart,
-        droppableIndexEnd,
-        draggableId,
+          droppableIdStart,
+          droppableIdEnd,
+          droppableIndexStart,
+          droppableIndexEnd,
+          draggableId
       } = action.payload;
-      const newState = state.map(list => {
-        // If the droppableIdStart and droppableIdEnd are the same
-        if (droppableIdStart === droppableIdEnd && droppableIdStart === list.id) {
-          // Shallow copy the applicants array to avoid mutating it directly
-          const newApplicants = [...list.applicants];
-          // Extract the dragged card from its original position
-          const [draggedCard] = newApplicants.splice(droppableIndexStart, 1);
-          // Insert the dragged card to its new position
-          newApplicants.splice(droppableIndexEnd, 0, draggedCard);
-          // Return a new list object with the updated applicants array
-          return { ...list, applicants: newApplicants };
-        }
-
-        if(droppableIdStart !== droppableIdEnd) {
-          const listStart = state.find(list => droppableIdStart === list.id)
-          const card = listStart.applicants.splice(droppableIndexStart, 1)
-          const listEnd = state.find(list => droppableIdEnd === list.id)
-          list.applicants.splice(droppableIndexEnd,0, ...card)
-        }
-        return list;
-      });
-    
-
+  
+      const newState = [...state];
+  
+      // Find categories
+      const categoryStart = newState.find(category => droppableIdStart === category.id);
+      const categoryEnd = newState.find(category => droppableIdEnd === category.id);
+  
+      // Dragging within the same category
+      if (droppableIdStart === droppableIdEnd) {
+          const job = categoryStart.applicants.splice(droppableIndexStart, 1)[0];
+          categoryStart.applicants.splice(droppableIndexEnd, 0, job);
+      } 
+      // Dragging to a different category
+      else {
+          const job = categoryStart.applicants.find(job => job.id === draggableId);
+          categoryStart.applicants.splice(droppableIndexStart, 1);
+          categoryEnd.applicants.splice(droppableIndexEnd, 0, job);
+      }
       return newState;
-    default:
+  }
+  
+
+      default:
       return state;
   }
 };

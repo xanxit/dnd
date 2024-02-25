@@ -6,12 +6,11 @@ import { DragDropContext } from "react-beautiful-dnd";
 import { sort } from "../redux/actions";
 import { useDispatch } from "react-redux";
 
-const ListContainer = ({ lists }) => {
+const ListContainer = ({ lists, sort }) => {
   const dispatch = useDispatch();
   const onDragEndFunc = (result) => {
     const { destination, source, draggableId } = result;
     if (!destination) return;
-    dispatch(
       sort(
         source.droppableId,
         destination.droppableId,
@@ -19,7 +18,6 @@ const ListContainer = ({ lists }) => {
         destination.index,
         draggableId
       )
-    );
   };
   return (
     <DragDropContext onDragEnd={onDragEndFunc}>
@@ -36,4 +34,4 @@ const mapStateToProps = (state) => {
   const { lists } = state;
   return { lists: lists };
 };
-export default connect(mapStateToProps)(ListContainer);
+export default connect(mapStateToProps, { sort })(ListContainer);

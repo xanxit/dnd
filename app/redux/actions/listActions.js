@@ -12,8 +12,8 @@ export const sort = (
     payload: {
       droppableIdStart,
       droppableIdEnd,
-      droppableIndexEnd,
       droppableIndexStart,
+      droppableIndexEnd,
       draggableId,
     },
   };
