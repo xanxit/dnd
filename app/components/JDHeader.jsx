@@ -11,7 +11,7 @@ const JDHeader = () => {
   ];
   const numbers = [0, 1, 2, 3];
   return (
-    <div className="px-6 py-10 w-full h-full bg-[#FAFBFC]">
+    <div className="px-6 py-10 w-full h-full border-b bg-[#FAFBFC]">
       <div className="flex flex-col md:flex-row items-center md:justify-between gap-y-6 md:gap-y-0">
         <div className="flex flex-row items-center gap-x-4">
           <a className="flex" href="#">
