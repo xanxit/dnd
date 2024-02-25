@@ -14,11 +14,15 @@ const ListContainer = ({ lists, sort, searchKeyWord }) => {
   const filteredLists = lists.map((list) => ({
     ...list,
     applicants: list.applicants.filter((applicant) =>
-      Object.values(applicant).some((value) =>
-        value.toLowerCase().includes(searchKeyWord.toLowerCase())
-      )
+      Object.values(applicant).some((value) => {
+        if (typeof value === "string") {
+          return value.toLowerCase().includes(searchKeyWord.toLowerCase());
+        }
+        return false; // Skip non-string values
+      })
     ),
   }));
+
   useEffect(() => {
     const isSanchit = filteredLists[0].applicants.filter(
       (applicant) => applicant.name.toLowerCase() === name.toLowerCase()
