@@ -63,12 +63,12 @@ const JDHeader = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center md:justify-between md:pl-[72px] mt-6 gap-y-4 md:gap-y-0">
+      <div className="flex flex-col md:flex-row items-center md:justify-between md:pl-[72px] mt-6 gap-y-4 md:gap-y-0]">
         <div className="flex flex-row gap-x-4">
           {headerObj.map((item, idx) => (
-            <div className="flex gap-1" key={idx}>
-              <p className="font-semibold text-[12px]">{item.num}</p>
-              <p className="text-[12px]">{item.text}</p>
+            <div className="flex gap-1 text-[#0D0D0D]" key={idx}>
+              <p className="font-semibold text-[12px] text-[#0D0D0D]">{item.num}</p>
+              <p className="text-[12px] text-[#0D0D0D]">{item.text}</p>
             </div>
           ))}
         </div>
