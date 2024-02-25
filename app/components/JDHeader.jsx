@@ -32,7 +32,7 @@ const JDHeader = () => {
           <div>
             <h1 className="text-[#0D0D0D] font-semibold text-lg flex items-center">
               Software Engineer, Front End
-              <span className="inline-block mt-1 ml-1.5">
+              <span className="inline-block ml-1.5">
                 <Image
                   src="/images/icons/drop-down.svg"
                   alt="caret down"
